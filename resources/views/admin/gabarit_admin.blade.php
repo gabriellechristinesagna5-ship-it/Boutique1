@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin — SenMarket</title>
+    <title>Admin — NdarMarket</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
@@ -52,13 +52,58 @@
             padding: 16px 20px;
             margin-bottom: 24px;
         }
+        
+        /* Responsive improvements */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px !important;
+                min-width: 200px !important;
+            }
+            .admin-content {
+                padding: 20px;
+            }
+            .admin-banner {
+                padding: 12px 16px;
+                margin-bottom: 16px;
+            }
+            .sidebar a {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            .titre-menu {
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .d-flex {
+                flex-direction: column !important;
+            }
+            .sidebar {
+                width: 100% !important;
+                min-width: 100% !important;
+                min-height: auto;
+                padding-top: 10px;
+            }
+            .admin-content {
+                padding: 16px;
+            }
+            .sidebar a {
+                padding: 10px 16px;
+                margin: 1px 8px;
+            }
+            .titre-menu {
+                font-size: 0.9rem;
+                margin-top: 10px;
+            }
+        }
     </style>
 </head>
 <body>
 <div class="d-flex">
     <div class="sidebar" style="width:260px; min-width:260px;">
         <div class="px-3 pb-3 border-bottom border-secondary border-opacity-25">
-            <x-senmarket-brand :href="route('landing')" :showSlogan="true" :small="true" theme="dark" />
+            <x-senmarket-brand :href="route('landing')" :showSlogan="false" :small="true" theme="dark" />
         </div>
 
         <div class="titre-menu">Tableau de bord</div>
@@ -93,7 +138,7 @@
     <div class="flex-grow-1 admin-content">
         <div class="admin-banner d-flex justify-content-between align-items-center flex-wrap gap-2">
             <div>
-                <strong style="color:#0b2240;">SenMarket Admin</strong>
+                <strong style="color:#0b2240;">NdarMarket Admin</strong>
                 <div class="text-muted small">Votre marché, toujours plus proche</div>
             </div>
         </div>

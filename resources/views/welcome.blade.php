@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SenMarket</title>
+    <title>NdarMarket</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
@@ -171,12 +171,49 @@
             }
         }
         @media (max-width: 768px) {
+            .main-container {
+                padding: 1rem;
+            }
             .logo-image {
-                width: 150px !important;
-                height: 150px !important;
+                width: 120px !important;
+                height: 120px !important;
             }
             .slogan-text {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
+                line-height: 1.4;
+            }
+            .next-link {
+                font-size: 1rem;
+                padding: 12px 24px;
+            }
+            .floating-element {
+                opacity: 0.3;
+            }
+        }
+        @media (max-width: 480px) {
+            .main-container {
+                padding: 0.5rem;
+            }
+            .logo-image {
+                width: 100px !important;
+                height: 100px !important;
+            }
+            .slogan-text {
+                font-size: 1rem;
+                line-height: 1.3;
+            }
+            .next-link {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+            .slogan-container {
+                margin: 2rem 0;
+            }
+            .next-container {
+                margin-top: 2rem;
+            }
+            .floating-element {
+                display: none;
             }
         }
     </style>
@@ -190,7 +227,7 @@
     <div class="main-container">
         <div class="logo-container logo-large">
             <div class="logo-only">
-                <img src="{{ asset('images/senmarket-logo.png') }}" alt="Logo SenMarket" class="logo-image">
+                <img src="{{ asset('images/ndarmarket-logo.png') }}" alt="Logo NdarMarket" class="logo-image">
             </div>
         </div>
         

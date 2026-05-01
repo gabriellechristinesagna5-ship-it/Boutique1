@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SenMarket — Boutique en ligne</title>
+    <title>NdarMarket — Boutique en ligne</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --sen-navy: #0b2240;
@@ -52,6 +53,81 @@
             background: rgba(190,161,115,.14);
             color: var(--sen-navy);
             font-weight: 700;
+        }
+        
+        /* Social Media Icons */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 18px;
+        }
+        
+        .social-icon.facebook {
+            background-color: #1877f2;
+            color: white;
+        }
+        
+        .social-icon.facebook:hover {
+            background-color: #0e5fcc;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
+        }
+        
+        .social-icon.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+        }
+        
+        .social-icon.instagram:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(225, 48, 108, 0.4);
+        }
+        
+        .social-icon.tiktok {
+            background-color: #000000;
+            color: white;
+        }
+        
+        .social-icon.tiktok:hover {
+            background-color: #333333;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Responsive Social Icons */
+        @media (max-width: 768px) {
+            .social-links {
+                gap: 12px;
+            }
+            .social-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .social-links {
+                gap: 10px;
+            }
+            .social-icon {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
         }
     </style>
     @stack('styles')
@@ -107,8 +183,21 @@
             <div class="mb-3">
                 <x-senmarket-brand :href="route('landing')" :showSlogan="true" :small="true" :centered="true" />
             </div>
+            <div class="mb-3">
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61560378857369" target="_blank" rel="noopener noreferrer" class="social-icon facebook" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/ndar.market/" target="_blank" rel="noopener noreferrer" class="social-icon instagram" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@ndarmarket?_r=1&_t=ZS-960Evh56wbp" target="_blank" rel="noopener noreferrer" class="social-icon tiktok" title="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
             <div class="mb-2">
-                <small class="text-muted">© 2024 SenMarket — Tous droits réservés</small>
+                <small class="text-muted">© 2024 NdarMarket — Tous droits réservés</small>
             </div>
             <div class="d-flex justify-content-center gap-3 flex-wrap">
                 <a href="{{ route('accueil') }}" class="text-muted text-decoration-none small">Boutique</a>

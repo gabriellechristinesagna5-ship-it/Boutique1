@@ -1,14 +1,56 @@
-@extends('gabarit')
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-@section('contenu')
-<div class="text-center">
-    <div class="mb-5">
-        <x-senmarket-brand :href="route('landing')" :showSlogan="true" :small="false" :centered="true" />
-    </div>
-    
-    <div class="mt-5">
-        <a href="{{ route('register') }}" class="btn btn-primary" style="background: #0b2240; border-color: #0b2240;">S'inscrire</a>
-        <a href="{{ route('login') }}" class="btn btn-outline-secondary ms-3">Se connecter</a>
-    </div>
-</div>
-@endsection
+        <title>NdarMarket</title>
+
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600;700;800&display=swap" rel="stylesheet" />
+
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    </head>
+    <body class="font-sans text-gray-900 antialiased" style="background: linear-gradient(135deg, #ffffff, #fff8ef);">
+        <div class="min-h-screen flex flex-col justify-center items-center px-4 py-8">
+           <div class="mb-6 text-center">
+                <x-senmarket-brand :href="route('landing')" :showSlogan="false" :centered="true" :hideText="true" />
+            </div>
+            <div class="w-full sm:max-w-md px-6 py-6 bg-white shadow-xl overflow-hidden sm:rounded-2xl border border-slate-100">
+                <div class="mb-6 text-center">
+                    <h1 class="text-2xl font-bold text-slate-900">Se connecter</h1>
+                </div>
+
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+
+                    <div>
+                        <x-input-label for="email" :value="__('Email')" />
+                        <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                    </div>
+
+                    <div class="mt-4">
+                        <x-input-label for="password" :value="__('Mot de passe')" />
+                        <x-text-input id="password" class="block mt-1 w-full"
+                                        type="password"
+                                        name="password"
+                                        required autocomplete="current-password" />
+                        <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                    </div>
+
+                    <div class="flex items-center justify-between mt-4 gap-3 flex-wrap">
+                        <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
+                            Pas encore inscrit ? S'inscrire
+                        </a>
+
+                        <x-primary-button class="ms-auto">
+                            Se connecter
+                        </x-primary-button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

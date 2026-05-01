@@ -26,6 +26,45 @@
         color: #6b7280;
         max-width: 720px;
     }
+    
+    /* Responsive improvements */
+    @media (max-width: 768px) {
+        .sen-product-grid .card-img-top {
+            height: 180px;
+        }
+        .sen-section-title {
+            font-size: 1.5rem;
+        }
+        .sen-section-subtitle {
+            font-size: 0.9rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .sen-product-grid .card-img-top {
+            height: 150px;
+        }
+        .sen-section-title {
+            font-size: 1.3rem;
+        }
+        .sen-section-subtitle {
+            font-size: 0.85rem;
+        }
+        .sen-product-grid .card {
+            border-radius: 15px;
+        }
+        .livraison-gratuite .badge {
+            font-size: 0.75rem;
+            padding: 0.4rem 0.6rem;
+            font-weight: 500;
+        }
+    }
+    @media (max-width: 480px) {
+        .livraison-gratuite .badge {
+            font-size: 0.7rem;
+            padding: 0.3rem 0.5rem;
+        }
+    }
 </style>
 @endpush
 
